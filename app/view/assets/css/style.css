@@ -31,6 +31,8 @@ section {
         max-height: 100%;
         object-fit: cover;
         border-radius: .5rem;
+
+        /* https://cssgenerator.org/box-shadow-css-generator.html */
         box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.64);
         -webkit-box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.64);
         -moz-box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.64);
