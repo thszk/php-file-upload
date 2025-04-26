@@ -48,7 +48,7 @@ class ImagemModel
     public function listar()
     {
         try {
-            $query = "SELECT * FROM $this->table";
+            $query = "SELECT * FROM $this->table ORDER BY data_envio DESC";
 
             $stmt = $this->conn->prepare($query);
             $stmt->execute();
