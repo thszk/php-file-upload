@@ -31,6 +31,9 @@ $imagens = $imagemModel->listar();
       <?php foreach ($imagens as $imagem) { ?>
         <div class="image-box">
           <img src="<?= '/php-file-upload/' . $imagem['caminho'] ?>" alt="<?= $imagem['nome_original'] ?>">
+          <a href="<?= '/php-file-upload/download.php?id=' . $imagem['id'] ?>" download>
+            <?= $imagem['nome_original'] ?>
+          </a>
         </div>
       <?php } ?>
     </div>

@@ -38,7 +38,6 @@ class ImagemModel
             var_dump($e);
             die('Erro ao criar Imagem');
         }
-
     }
 
     /**
@@ -57,6 +56,28 @@ class ImagemModel
         } catch (Exception $e) {
             var_dump($e);
             die('Erro ao buscar Imagens');
+        }
+    }
+
+    /**
+     * Summary of buscarPorId
+     * @param int $id
+     * @return array
+     */
+    public function buscarPorId($id)
+    {
+        try {
+            $query = "SELECT * FROM $this->table WHERE id = :id";
+
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute([
+                ':id' => $id
+            ]);
+
+            return $stmt->fetch();
+        } catch (Exception $e) {
+            var_dump($e);
+            die('Erro ao buscar Imagem');
         }
     }
 }
