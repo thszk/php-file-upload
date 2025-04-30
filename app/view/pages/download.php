@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/app/model/ImagemModel.php';
+require_once __DIR__ . '/../../model/ImagemModel.php';
 
 if (!empty($_GET['id'])) {
     $imagemModel = new ImagemModel();
@@ -9,7 +9,7 @@ if (!empty($_GET['id'])) {
         die('Imagem não encontrada.');
     }
 
-    $caminhoImagem = $imagem['caminho'];
+    $caminhoImagem = __DIR__ . '/../../../' . $imagem['caminho'];
     if (!file_exists($caminhoImagem)) {
         die('Arquivo da imagem não encontrado.');
     }

@@ -20,7 +20,7 @@ $imagens = $imagemModel->listar();
 <body>
   <section>
     <h2>Exemplo Upload de Imagem</h2>
-    <form action="upload.php" method="POST" enctype="multipart/form-data">
+    <form action="app/view/pages/upload.php" method="POST" enctype="multipart/form-data">
       <input type="file" name="imagem" accept="image/*" required>
       <button type="submit">Enviar</button>
     </form>
@@ -30,8 +30,8 @@ $imagens = $imagemModel->listar();
     <div class="container">
       <?php foreach ($imagens as $imagem) { ?>
         <div class="image-box">
-          <img src="<?= 'download.php?id=' . $imagem['id'] ?>" alt="<?= $imagem['nome_original'] ?>">
-          <a href="<?= 'download.php?id=' . $imagem['id'] ?>" download>
+          <img src="<?= 'app/view/pages/download.php?id=' . $imagem['id'] ?>" alt="<?= $imagem['nome_original'] ?>">
+          <a href="<?= 'app/view/pages/download.php?id=' . $imagem['id'] ?>" download>
             <?= $imagem['nome_original'] ?>
           </a>
         </div>
