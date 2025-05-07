@@ -29,6 +29,12 @@ if (!in_array($extensaoArquivo, $extensoesPermitidas)) {
     die('Extensão de arquivo inválida. Apenas JPG, JPEG, PNG são permitidos.');
 }
 
+// Tratamento para tamanho máximo de 16MB
+$tamanhoMaximoArquivoEmBytes = 16 * 1024 * 1024;
+if ($imagem['size'] > $tamanhoMaximoArquivoEmBytes) {
+    die('Arquivo muito grande!');
+}
+
 $diretorioDestino = './uploads/';
 
 // Validação caso o diretório destino não exista, então cria
